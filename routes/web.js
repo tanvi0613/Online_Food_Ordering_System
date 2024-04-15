@@ -10,7 +10,7 @@ const auth = require('../app/http/middlewares/auth');
 function initRoutes(app){
     //storing routes
     app.get('/', homeController().index);
-    app.get('/home', homeController().index);
+    app.get('/index', homeController().index);
     app.get('/main_menu', menuController().main);
     app.get('/menu2', menuController().menu2);
 
