@@ -1,0 +1,23 @@
+dependencies required:
+1) bcrypt
+2) bootstrap
+3) connect-mongo
+4) cookie-parser
+5) ejs
+6) express
+7) express-flash
+8) express-session
+9) mongodb
+10) mongoose
+11) passport
+12) passport-local
+
+dev-dependencies required:
+1) laravel-mix(optional)
+2) nodemon
+
+app required:
+1) mongodb compass(for database)
+
+extension required on VS Code:
+1) live sass compiler
