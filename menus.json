@@ -1,0 +1,110 @@
+[
+    {
+        "_id": {
+            "$oid": "6612ccea85ea58f798ff5bf8"
+        },
+        "name": "Cream Cheese Garlic Bread",
+        "image": "Korean Cream Cheese Garlic Bread.jpg",
+        "description": "Savor our creamy Garlic Cheese Bread – pure delight!",
+        "price": "199.00"
+    },
+    {
+        "_id": {
+            "$oid": "6612ccea85ea58f798ff5bf9"
+        },
+        "name": "Vanilla Chessecake",
+        "image": "Aesthetic cute pastry.jpg",
+        "description": "Indulge in the creamy decadence of our vanilla-infused cheesecake.",
+        "price": "135.70"
+    },
+    {
+        "_id": {
+            "$oid": "6612ccea85ea58f798ff5bfa"
+        },
+        "name": "Red Baked Pasta",
+        "image": "download.jpg",
+        "description": "Deliciously comforting baked pasta in a rich, savory red sauce.",
+        "price": "220.50"
+    },
+    {
+        "_id": {
+            "$oid": "6612ccea85ea58f798ff5bfb"
+        },
+        "name": "Cookies",
+        "image": "food1.jpg",
+        "description": "Crunchy, chewy, chocolate-packed delights.",
+        "price": "199.99"
+    },
+    {
+        "_id": {
+            "$oid": "6612ccea85ea58f798ff5bfc"
+        },
+        "name": "Wontons",
+        "image": "wonton-home.jpg",
+        "description": "Delicate wontons, filled with savory goodness.",
+        "price": "249.00"
+    },
+    {
+        "_id": {
+            "$oid": "6612ccea85ea58f798ff5bfd"
+        },
+        "name": "Cupcakes",
+        "image": "This Trick for Making Heart-Shaped Cupcakes Without a Special Pan Is Ingenious.jpg",
+        "description": "Love-infused, heart-shaped cupcakes—sweet in every sense.",
+        "price": "189.50"
+    },
+    {
+        "_id": {
+            "$oid": "6612ccea85ea58f798ff5bfe"
+        },
+        "name": "Chocolate Shakes",
+        "image": "Mocha Iced Coffee Recipe _ Quick and Easy Homemade Mocha.jpg",
+        "description": "Rich, creamy chocolate shake—decadence in a glass.",
+        "price": "179.99"
+    },
+    {
+        "_id": {
+            "$oid": "6612ccea85ea58f798ff5bff"
+        },
+        "name": "Virgin Mojito",
+        "image": "virgin_mojito.jpg",
+        "description": "Refreshing Virgin Mojito—zesty, minty, and utterly invigorating.",
+        "price": "150.69"
+    },
+    {
+        "_id": {
+            "$oid": "6612ccea85ea58f798ff5c00"
+        },
+        "name": "Macarons",
+        "image": "macaron2.jpg",
+        "description": "Delicate, colorful bites of almond meringue bliss.",
+        "price": "169.50"
+    },
+    {
+        "_id": {
+            "$oid": "6612ccea85ea58f798ff5c01"
+        },
+        "name": "Double Cheese Burger",
+        "image": "burger.png",
+        "description": "Juicy, flavorful delight packed in a bun.",
+        "price": "189.00"
+    },
+    {
+        "_id": {
+            "$oid": "6612ccea85ea58f798ff5c02"
+        },
+        "name": "Fiery Diablo Pizza",
+        "image": "Chicken Tikka Masala Pizza (Homemade Indian Pizza!) - Rasa Malaysia.jpg",
+        "description": "Crispy, cheesy goodness in every slice.",
+        "price": "239.00"
+    },
+    {
+        "_id":{
+            "$oid": "6612ccea85ea58f798ff5c03"
+        },
+        "name": "Mixed Berries Smoothie",
+        "image": "MIXED BERRY SMOOTHIE.jpg",
+        "description": "A vibrant blend of berries, bursting with freshness.",
+        "price": "250.45"
+    }
+]
