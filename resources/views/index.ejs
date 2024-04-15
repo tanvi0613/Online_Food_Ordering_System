@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GourmetGo</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Oswald:wght@200..700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/css/app.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+    <style>
+      .ms-custom {
+          margin-left: 6rem;
+      }
+      .btn{
+          background-color:#FFF;
+      }
+      .btn-outline-custom {
+          border-color: #0D1B2A;
+      }
+      .btn-custom:hover {
+          color: #FFF;
+          background-color: #778DA9;
+      }
+      .mid-text{
+          background-image: url('./img/Shares\ are\ \(2\).png');
+          margin:400px 0 0 65px;
+          width:1400px;
+          height:180px;
+          border-radius: 10px;
+          color:#FFF;
+          padding:15px 0 0 120px;
+      }
+      .home-mid-text{
+          font-weight: bolder;
+          margin:80px 0 0 80px;
+      }
+      .button{
+          width:150px;
+          margin-left:25px;
+          padding-left: 25px;
+      }
+      .image-container {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.image-container img {
+    width: 100%;
+    height: 50%;  /* Each image now covers only half the container */
+    position: absolute;
+    left: 0;
+}
+
+.upper-half {
+    top: 0;
+}
+
+.lower-half {
+    bottom: 0;
+}
+
+.content {
+    display: none;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    text-align: center;
+}
+  </style>
+</head>
+<body>
+  <script>
+      function openWin() {
+        window.open("http://localhost:4500/menu2");
+      }
+  </script>
+  <script src="/js/app.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <div class="image-container" id="imageContainer">
+    <img src="./img/snapshot_upper_half.png" alt="Upper Half" class="upper-half">
+    <img src="./img/snapshot_lower_half.png" alt="Lower Half" class="lower-half">
+</div>
+<div class="content" id="mainContent">
+    <!-- Your main content goes here -->
+    <h1>Welcome to My Page</h1>
+    <p>This is the main content of the page.</p>
+</div>
+    <nav class="navbar navbar-expand-lg bg-body-white border-bottom border-2 border-gray" style="height:100px;">
+        <div class="container-fluid">
+            <a class="navbar-brand ms-custom" href="#">
+                <img src="img/logo2.png" alt="Logo" width="220" height="40" class="d-inline-block align-text-top">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mb-2 mb-lg-0 ms-auto fs-5" style="padding-right: 18px;">
+              <li class="nav-item" style="padding-right: 20px;">
+                <a class="nav-link active" aria-current="page" href="index" style="color:#0D1B2A;">Home</a>
+              </li>
+              <li class="nav-item" style="padding-right: 20px;">
+                <a class="nav-link active" aria-current="page" href="main_menu" style="color:#0D1B2A;">Menu</a>
+              </li>
+              <% if (user) { %> <!-- Check if user object exists in the session -->
+                <li class="nav-item" style="padding-right: 20px;">
+                  <a class="nav-link" aria-current="page" href="orders" style="color:#0D1B2A;">Orders</a>
+                </li>
+                <li class="nav-item" style="padding-right: 20px;">
+                  <a class="nav-link" aria-current="page" href="/logout" style="color:#0D1B2A;" onclick="alert('You have been logged out!')">Logout</a>
+                </li>
+              <% } else { %>
+                <li class="nav-item" style="padding-right: 20px;">
+                  <a class="nav-link" aria-current="page" href="login" style="color:#0D1B2A;">Login</a>
+                </li>
+                <li class="nav-item" style="padding-right: 15px;">
+                  <a class="nav-link" aria-current="page" href="register" style="color:#0D1B2A;">Register</a>
+                </li>
+              <% } %>
+              <h6 id="cartCounter" class="cart_no"><%= session.cart ? session.cart.totalQty : '' %></h6>
+                  <li class="nav-item" style="padding-right: 10px;">
+                    <a class="nav-link" aria-current="page" href="cart">
+                        <span><img src="./img/cart-32.png" style="color:#0D1B2A;"></span>
+                    </a>
+                  </li>
+            </ul>
+            <form class="d-flex" role="search" style="padding-right: 20px;">
+              <input class="form-control me-2 btn-outline-custom fs-6" type="search" placeholder="Looking for something?" aria-label="Search">
+              <button class="btn btn-outline-custom btn-custom" type="submit">Search</button>
+            </form>
+          </div>
+        </div>
+      </nav>
+      <section>
+        <div class="top1">
+            <p class="lato-light">Take a flavorful journey, explore our special menu!</p>
+            <form>
+                <input type="button" value="View Menu" class="top-button" onclick="openWin()">
+              </form>
+        </div>
+    </section>
+    <section>
+        <div class="check">
+            <p class="heading"><b>TOP RECOMMENDED</b></p>
+            <div class="row-home">
+                <div class="column-home">
+                    <div class="card-home">
+                        <img src="./img/Korean Cream Cheese Garlic Bread.jpg" class="card-img">
+                        <div class="card-heading">
+                            <h3 style="font-size: 20px;margin-top: 20px;"><pre>Cream Cheese Garlic Bread</pre></h3>
+                            <div class="price">
+                                <span style="font-size: 20px;"><pre>&#8377 199.00</pre></span>
+                                <span><a href="main_menu" class="button2 text-decoration-none"><pre>Menu</pre></a></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="column-home">
+                    <div class="card-home">
+                        <img src="./img/Aesthetic cute pastry.jpg" class="card-img">
+                        <div class="card-heading">
+                            <h3 style="font-size: 20px;margin-top: 20px;"><pre>Vanilla Cheesecake</pre></h3>
+                            <div class="price">
+                                <span style="font-size: 20px;"><pre>&#8377 135.75</pre></span>
+                                <span><a href="main_menu" class="button2 text-decoration-none"><pre>Menu</pre></a></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="column-home">
+                    <div class="card-home">
+                        <img src="./img/download.jpg" class="card-img">
+                        <div class="card-heading">
+                            <h3 style="font-size: 20px;margin-top: 20px;"><pre>Red Sauce Pasta</pre></h3>
+                            <div class="price">
+                                <span style="font-size: 20px;"><pre>&#8377 220.50</pre></span>
+                                <span><a href="main_menu" class="button2 text-decoration-none"><pre>Menu</pre></a></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+              </div>
+        </div>
+    </section>
+    <section>
+        <div class="mid-text">
+            <p style="font-family: Lato,sans-serif;font-size: 18px;"><strong>WELCOME TO</strong></p>
+            <p style="font-family: Lato, sans-serif;font-size: 45px; margin:-35px 0 0 -35px"><strong>GourmetGo</strong></p>
+            <p style="color:#ececec;font-family: Lato, sans-serif;font-weight: 400;font-size: 18px;letter-spacing: 3px;margin:-13px 0 0 -30px">Satisfy your midnight cravings with our special delivery service! Enjoy fresh coffees and pastries delivered straight to your doorstep, even in the dead of night. Order now and indulge in a taste of perfection,<br>whenever the craving strikes!</p>
+        </div>
+        <h3 class="home-mid-text">Handcrafted Curations</h3>
+        <div class="home-middle">
+            <img src="./img/Red Velvet Milkshake Recipe - 5 Ingredients Only! - Bake with Shivesh.jpg">
+            <img src="./img/Chicken Tikka Masala Pizza (Homemade Indian Pizza!) - Rasa Malaysia.jpg">
+            <img src="./img/Hot Dry Noodles (Re Gan Mian, 热干面).jpg">
+            <img src="./img/Mocha Iced Coffee Recipe _ Quick and Easy Homemade Mocha.jpg">
+            <img src="./img/This Trick for Making Heart-Shaped Cupcakes Without a Special Pan Is Ingenious.jpg">
+            <img src="./img/Pulled Chicken Burrito Recipe - The Girl on Bloor.jpg">
+        </div>
+        <p><pre style="margin:-15px 0 0 110px;font-weight: bold;font-size: 20px;">Shakes                 Pizza                 Noodles                Coffee                Cupcakes               Burrito</pre></p>
+    </section>
+    <section>
+        <h3 class="home-mid-text">From Our Menu</h3><br><br>
+        <div class="cards-section">
+            <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
+                <div class="carousel-inner">
+                  <div class="carousel-item active">
+                    <div class="cards-wrapper">
+                      <div class="card">
+                        <img src="./img/food3.jpg" width="285px" height="300px" class="card-img-top">
+                          <div class="card-body">
+                            <p class="card-text"><div class="d-grid gap-2 col-6 mx-auto"><a href="main_menu" class="button2 button text-decoration-none" type="button"><b>Order Now</b></a></div></p>
+                          </div>
+                      </div>
+                      <div class="card">
+                        <img src="./img/pizza.jpg" width="285px" height="300px" class="card-img-top">
+                        <div class="card-body">
+                          <p class="card-text"><div class="d-grid gap-2 col-6 mx-auto"><a href="main_menu" class="button2 button text-decoration-none" type="button"><b>Order Now</b></a></div></p>
+                        </div>
+                      </div>
+                      <div class="card">
+                        <img src="./img/food2.jpg" width="285px" height="300px" class="card-img-top">
+                        <div class="card-body">
+                          <p class="card-text"><div class="d-grid gap-2 col-6 mx-auto"><a href="main_menu" class="button2 button text-decoration-none" type="button"><b>Order Now</b></a></div></p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="carousel-item">
+                    <div class="cards-wrapper">
+                      <div class="card">
+                        <img src="./img/pasta-home.jpg" width="285px" height="300px" class="card-img-top">
+                        <div class="card-body">
+                          <p class="card-text"><div class="d-grid gap-2 col-6 mx-auto"><a href="main_menu" class="button2 button text-decoration-none" type="button"><b>Order Now</b></a></div></p>
+                        </div>
+                      </div>
+                      <div class="card">
+                        <img src="./img/food1.jpg" width="285px" height="300px" class="card-img-top">
+                        <div class="card-body">
+                          <p class="card-text"><div class="d-grid gap-2 col-6 mx-auto"><a href="main_menu" class="button2 button text-decoration-none" type="button"><b>Order Now</b></a></div></p>
+                        </div>
+                      </div>
+                      <div class="card">
+                        <img src="./img/wonton-home.jpg" width="285px" height="300px" class="card-img-top">
+                        <div class="card-body">
+                          <p class="card-text"><div class="d-grid gap-2 col-6 mx-auto"><a href="main_menu" class="button2 button text-decoration-none" type="button"><b>Order Now</b></a></div></p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+                  <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                  <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
+                  <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                  <span class="visually-hidden">Next</span>
+                </button>
+              </div>
+            </div>
+    </section><br><br>
+    <footer>
+        <div class="footer-content">
+          <img src="./img/logo1.png">
+          <ul style="margin:40px 0 0 -60px;">
+            <h3>Navigation</h3>
+            <li><a href="index">Home</a></li>
+            <li><a href="/resources/views/login">Login</a></li>
+            <li><a href="/resources/views/register">Register</a></li>
+            <li><a href="/resources/views/cart">Cart</a></li>
+            <li><a href="menu2">Special Menu</a></li>
+          </ul>
+          <ul>
+            <h3>Information</h3>
+            <li>+911234560789</li>
+            <li>gourmetgo@gmail.com</li>
+            <li>Punjab,India</li>
+          </ul>
+          <ul style="margin:-40px 0 0 -160px;">
+            <h3>Opening Hours</h3>
+            <li>24*7</li>
+            <li>Special Midnight Delivery</li>
+          </ul>
+        </div>
+        <div class="footer-social-icons">
+            <ul>
+                <li><a href="#"><i class="fab fa-facebook"></i></a></li>
+                <li><a href="#"><i class="fab fa-twitter"></i></a></li>
+                <li><a href="#"><i class="fab fa-instagram"></i></a></li>
+                <li><a href="#"><i class="fab fa-pinterest"></i></a></li>
+                <li><a href="#"><i class="fab fa-youtube"></i></a></li>
+            </ul>
+            <p>&copy; 2024 GourmetGo Corporation. All rights reserved.</p>
+        </div>
+      </footer>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/js/all.min.js"></script>
+      <script>
+        // script.js
+document.addEventListener('DOMContentLoaded', function() {
+    setTimeout(() => {
+        const upperHalf = document.querySelector('.upper-half');
+        const lowerHalf = document.querySelector('.lower-half');
+        const mainContent = document.getElementById('mainContent');
+
+        upperHalf.style.transition = 'transform 1s ease-in-out';
+        lowerHalf.style.transition = 'transform 1s ease-in-out';
+
+        upperHalf.style.transform = 'translateY(-100%)'; // Move the top half up
+        lowerHalf.style.transform = 'translateY(100%)';  // Move the bottom half down
+
+        setTimeout(() => {
+            document.getElementById('imageContainer').style.display = 'none';
+            mainContent.style.display = 'block';
+        }, 1000); // Wait for the animation to complete
+    }, 1000); // Delay before the animation starts
+});
+
+    </script>
+</body>
+</html>
